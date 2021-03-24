@@ -2,9 +2,7 @@
 
 int DiffIsLessThanOrEqualToMaxDelta(double value, double nextValue, double maxDelta)
 { 
-  int ReturnVal;
-  ReturnVal = (nextValue - value > maxDelta) ? 0 : 1;
-  return ReturnVal;
+  return (nextValue - value <= maxDelta);
 }
 
 int validateSOCreadings(double* values, int numOfValues,double maxDelta)
@@ -14,16 +12,15 @@ int validateSOCreadings(double* values, int numOfValues,double maxDelta)
   {
     return 1;
   }
-  else
+
+  for(int i = 0; i < lastButOneIndex; i++)
   {
-      for(int i = 0; i < lastButOneIndex; i++)
-      {
-        if(DiffIsLessThanOrEqualToMaxDelta(values[i], values[i + 1], maxDelta))
-        {
-          return 0;
-        }
-      }
+    if(DiffIsLessThanOrEqualToMaxDelta(values[i], values[i + 1], maxDelta))
+    {
+      return 0;
+    }
   }
+  
   
   return 1;
 }
