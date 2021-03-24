@@ -1,16 +1,16 @@
 #include "sensor-validate.h"
 
-int DiffIsLessThanOrEqualToMaxDelta(double value, double nextValue, double maxDelta) {
-  if(nextValue - value > maxDelta) {
-    return 0;
-  }
-  return 1;
+int DiffIsLessThanOrEqualToMaxDelta(double value, double nextValue, double maxDelta)
+{ 
+  int ReturnVal;
+  ReturnVal = (nextValue - value > maxDelta) ? 0 : 1;
+  return ReturnVal;
 }
 
 int validateSOCreadings(double* values, int numOfValues,double maxDelta)
 {
   int lastButOneIndex = numOfValues - 1;
-  if(values == null)
+  if(values == NULL)
   {
     return 1;
   }
@@ -26,5 +26,3 @@ int validateSOCreadings(double* values, int numOfValues,double maxDelta)
   return 1;
 }
 
-  return 1;
-}
