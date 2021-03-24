@@ -10,10 +10,10 @@ int DiffIsLessThanOrEqualToMaxDelta(double value, double nextValue, double maxDe
 int validateSOCreadings(double* values, int numOfValues,double maxDelta)
 {
   int lastButOneIndex = numOfValues - 1;
-  if(values == 0)
-  {
-    return 1;
-  }
+//   if(values == 0)
+//   {
+//     return 1;
+//   }
   
   for(int i = 0; i < lastButOneIndex; i++)
   {
