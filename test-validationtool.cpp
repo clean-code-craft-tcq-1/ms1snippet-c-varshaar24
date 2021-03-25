@@ -24,5 +24,5 @@ TEST_CASE("reports error when soc jumps abruptly3") {
 TEST_CASE("reports error when current readings are not given") {
   double currentReadings[] = NULL;
   int numOfCurReadings = 0;
-  REQUIRE(validateSOCreadings(currentReadings, numOfCurReadings,0.1) == 1);
+  REQUIRE(validateSOCreadings(NULL, numOfCurReadings,0.1) == 1);
 }
