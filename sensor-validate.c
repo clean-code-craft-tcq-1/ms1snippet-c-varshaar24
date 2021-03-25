@@ -1,8 +1,8 @@
 #include "sensor-validate.h"
 
-int DiffIsLessThanOrEqualToMaxDelta(double value, double nextValue, double maxDelta)
+int DiffIsGreaterThanMaxDelta(double value, double nextValue, double maxDelta)
 { 
-  return (nextValue - value <= maxDelta);
+  return (nextValue - value > maxDelta);
 }
 
 int CheckSOCReadings(double* values, int numOfValues,double maxDelta)
@@ -11,9 +11,9 @@ int CheckSOCReadings(double* values, int numOfValues,double maxDelta)
   
   for(int i = 0; i < lastButOneIndex; i++)
   {
-    if(DiffIsLessThanOrEqualToMaxDelta(values[i], values[i + 1], maxDelta))
+    if(DiffIsGreaterThanMaxDelta(values[i], values[i + 1], maxDelta))
     {
-      return 0;
+      return 1;
     }
   }
   
