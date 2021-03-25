@@ -18,5 +18,5 @@ TEST_CASE("reports error when current jumps abruptly") {
 TEST_CASE("reports error when current readings are not given") {
   double currentReadings[] = {};
   int numOfCurReadings = 0;
-  REQUIRE(validateSOCreadings(currentReadings, numOfCurReadings,0.1) == 0);
+  REQUIRE(validateSOCreadings(currentReadings, numOfCurReadings,0.1) == 1);
 }
