@@ -18,7 +18,7 @@ int CheckSOCReadings(double* values, int numOfValues,double maxDelta)
   }
   
   
-  return 1;
+  return 0;
 }
 
 int validateSOCreadings(double* values, int numOfValues,double maxDelta)
